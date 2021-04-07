@@ -3,8 +3,6 @@ package com.dancesar.casadocodigo.entity.dto;
 import com.dancesar.casadocodigo.entity.Autor;
 import lombok.Data;
 
-import java.time.LocalDateTime;
-
 @Data
 public class AutorDTO {
 

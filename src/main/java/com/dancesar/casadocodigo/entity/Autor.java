@@ -7,7 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -27,6 +29,8 @@ public class Autor implements Serializable {
     private String email;
 
     @NotNull
+    @NotBlank
+    @Size(max = 400)
     private String descricao;
 
     private LocalDateTime dtCadastro = LocalDateTime.now();

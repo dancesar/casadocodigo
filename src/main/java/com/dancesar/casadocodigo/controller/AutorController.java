@@ -11,17 +11,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
-@RequestMapping("/autor")
+@RequestMapping("/autores")
 public class AutorController {
 
     @Autowired
     private AutorRepository autorRepository;
 
     @PostMapping
-    public ResponseEntity<AutorDTO> createAuthor(@RequestBody AutorDTO autorDTO){
+    public ResponseEntity<AutorDTO> createAuthor(@RequestBody @Valid AutorDTO autorDTO){
         Autor autor = autorDTO.converter();
         autorRepository.save(autor);
-        return ResponseEntity.status(HttpStatus.CREATED).body(autorDTO);
+        return ResponseEntity.status(HttpStatus.OK).body(autorDTO);
     }
 }
