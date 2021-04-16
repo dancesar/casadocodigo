@@ -1,15 +1,13 @@
 package com.dancesar.casadocodigo.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -17,20 +15,18 @@ import java.time.LocalDateTime;
 @Entity
 public class Autor implements Serializable {
 
+    @JsonInclude(Include.NON_NULL)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotNull
+    @JsonInclude(Include.NON_EMPTY)
     private String nome;
 
-    @NotNull
-    @Email(message = "E-mail invalido.")
+    @JsonInclude(Include.NON_EMPTY)
     private String email;
 
-    @NotNull
-    @NotBlank
-    @Size(max = 400)
+    @JsonInclude(Include.NON_EMPTY)
     private String descricao;
 
     private LocalDateTime dtCadastro = LocalDateTime.now();
