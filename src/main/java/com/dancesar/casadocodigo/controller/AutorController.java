@@ -17,9 +17,6 @@ import javax.validation.Valid;
 public class AutorController {
 
     @Autowired
-    private AutorRepository autorRepository;
-
-    @Autowired
     private ServiceAutor iAutorService;
 
     @Autowired

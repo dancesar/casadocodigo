@@ -3,6 +3,7 @@ package com.dancesar.casadocodigo.entity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +13,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
+@EqualsAndHashCode
 @Entity
 public class Autor implements Serializable {
 

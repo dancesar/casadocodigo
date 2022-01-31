@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://192.168.0.8:5432/deveficente
+    url: jdbc:postgresql://192.168.0.14:5432/deveficente
     password: Postgres2021!
     username: postgres
     hikari:
