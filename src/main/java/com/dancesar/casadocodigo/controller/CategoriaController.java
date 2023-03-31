@@ -1,7 +1,7 @@
 package com.dancesar.casadocodigo.controller;
 
 import com.dancesar.casadocodigo.entity.dto.CategoriaDTO;
-import com.dancesar.casadocodigo.repository.validators.ProibeNomeDuplicadoNomeValidator;
+import com.dancesar.casadocodigo.repository.validators.ProibeCategoriaDuplicadoCategoriaValidator;
 import com.dancesar.casadocodigo.service.irepository.ServiceCategoria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,7 +19,7 @@ public class CategoriaController {
     private ServiceCategoria iServiceCategoria;
 
     @Autowired
-    ProibeNomeDuplicadoNomeValidator proibeNomeDuplicadoNomeValidator;
+    private ProibeCategoriaDuplicadoCategoriaValidator proibeNomeDuplicadoNomeValidator;
 
     @InitBinder
     public void init(WebDataBinder webDataBinder) {
