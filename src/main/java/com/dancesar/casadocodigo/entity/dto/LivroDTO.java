@@ -12,15 +12,30 @@ import java.time.LocalDateTime;
 public class LivroDTO {
 
     private Integer id;
+
     @NotBlank(message = "Informe o título do livro.")
     private String titulo;
+
+    @NotBlank(message = "Informe o resumo do livro.")
     private String resumo;
+
     private String sumario;
+
+    @NotBlank(message = "Preço é obrigatório.")
     private BigDecimal preco;
+
+    @NotBlank(message = "Números de páginas é obrigatório.")
     private Integer numPaginas;
+
+    @NotBlank(message = "ISBN é obrigatório..")
     private String isbn;
+
     private LocalDateTime dtPublicacao;
+
+    @NotBlank(message = "Categoria é obrigatório.")
     private Categoria categoria;
+
+    @NotBlank(message = "Autor é obrigatório.")
     private Autor autor;
 
     public LivroDTO(Integer id, String titulo, String resumo, String sumario, BigDecimal preco, Integer numPaginas, String isbn, LocalDateTime dtPublicacao, Categoria categoria, Autor autor) {

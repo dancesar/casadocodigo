@@ -1,4 +1,4 @@
-package com.dancesar.casadocodigo.repository.validators;
+package com.dancesar.casadocodigo.utils.validators;
 
 import com.dancesar.casadocodigo.entity.Categoria;
 import com.dancesar.casadocodigo.entity.dto.CategoriaDTO;

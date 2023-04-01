@@ -1,4 +1,4 @@
-package com.dancesar.casadocodigo.repository.validators;
+package com.dancesar.casadocodigo.utils.validators;
 
 import com.dancesar.casadocodigo.entity.Livro;
 import com.dancesar.casadocodigo.entity.dto.LivroDTO;
@@ -11,7 +11,7 @@ import org.springframework.validation.Validator;
 import java.util.Optional;
 
 @Component
-public class ProibeTituloDuplicadoAutoValidator implements Validator {
+public class ProibeIsbnDuplicadoLivroValidator implements Validator {
 
     @Autowired
     private LivroRepository livroRepository;
@@ -27,10 +27,10 @@ public class ProibeTituloDuplicadoAutoValidator implements Validator {
             return;
         }
         LivroDTO livroDTO = (LivroDTO) target;
-        Optional<Livro> possivelTitulo = livroRepository.findByTitulo(livroDTO.getTitulo());
+        Optional<Livro> possivelIsbn = livroRepository.findByISBN(livroDTO.getIsbn());
 
-        if (possivelTitulo.isPresent()) {
-            errors.rejectValue("titulo", null, "Já existe um livro com esse título", livroDTO.getTitulo());
+        if (possivelIsbn.isPresent()) {
+            errors.rejectValue("ISBN", null, "Já existe um ISBN com esse título" + livroDTO.getIsbn());
         }
     }
 }
