@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/categoria")
+@RequestMapping("/livro")
 public class LivroController {
 
     @Autowired

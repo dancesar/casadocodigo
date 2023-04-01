@@ -4,6 +4,7 @@ import com.dancesar.casadocodigo.entity.Autor;
 import com.dancesar.casadocodigo.entity.Categoria;
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 public class LivroDTO {
 
     private Integer id;
+    @NotBlank(message = "Informe o título do livro.")
     private String titulo;
     private String resumo;
     private String sumario;

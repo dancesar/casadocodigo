@@ -1,19 +1,17 @@
 package com.dancesar.casadocodigo.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
 @EqualsAndHashCode
+@Getter
+@Setter
 @Entity
 public class Livro implements Serializable {
 
@@ -29,8 +27,14 @@ public class Livro implements Serializable {
     private BigDecimal preco;
     private Integer numPaginas;
     private String isbn;
-    private LocalDateTime dtPublicacao;
+    private LocalDateTime dtPublicacao = LocalDateTime.now();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idcategoria")
     private Categoria categoria;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idautor")
     private Autor autor;
 
     public Livro(Integer id, String titulo, String resumo, String sumario, BigDecimal preco, Integer numPaginas, String isbn, LocalDateTime dtPublicacao, Categoria categoria, Autor autor) {
