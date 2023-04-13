@@ -27,10 +27,10 @@ public class ProibeIsbnDuplicadoLivroValidator implements Validator {
             return;
         }
         LivroDTO livroDTO = (LivroDTO) target;
-        Optional<Livro> possivelIsbn = livroRepository.findByISBN(livroDTO.getIsbn());
+        Optional<Livro> possivelIsbn = livroRepository.findByIsbn(livroDTO.getIsbn());
 
         if (possivelIsbn.isPresent()) {
-            errors.rejectValue("ISBN", null, "Já existe um ISBN com esse título" + livroDTO.getIsbn());
+            errors.rejectValue("isbn", null, "Já existe um ISBN com esse título" + livroDTO.getIsbn());
         }
     }
 }

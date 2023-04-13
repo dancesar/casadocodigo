@@ -32,10 +32,10 @@ public class LivroDTO {
 
     private LocalDateTime dtPublicacao;
 
-    @NotBlank(message = "Categoria é obrigatório.")
+    //@NotBlank(message = "Categoria é obrigatório.")
     private Categoria categoria;
 
-    @NotBlank(message = "Autor é obrigatório.")
+    //@NotBlank(message = "Autor é obrigatório.")
     private Autor autor;
 
     public LivroDTO(Integer id, String titulo, String resumo, String sumario, BigDecimal preco, Integer numPaginas, String isbn, LocalDateTime dtPublicacao, Categoria categoria, Autor autor) {
